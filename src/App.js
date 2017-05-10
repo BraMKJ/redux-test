@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import styled from 'styled-components'
-import Header from './components/Header'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
+import HeaderContainer from './containers/HeaderContainer'
 import Wrapper from './components/Wrapper'
 import Home from './components/Home'
 import SongsContainer from './containers/SongsContainer'
@@ -11,10 +10,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header>
-            <StyledLink to='/'>Home</StyledLink>
-            <StyledLink to='/songs'>Songs</StyledLink>
-          </Header>
+          <HeaderContainer/>
           <div id="main">
             <Wrapper>
               <Route exact path='/' component={Home}/>
@@ -26,13 +22,5 @@ class App extends Component {
     );
   }
 }
-
-const StyledLink = styled(Link)`
-  margin-right: 16px;
-  
-  &:last-child {
-    margin-right: 0;
-  }
-`
 
 export default App;

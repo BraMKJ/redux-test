@@ -1,4 +1,9 @@
 const initialState = {
+  ui: {
+    menu: {
+      isActive: false
+    }
+  },
   songs: {}
 }
 
